@@ -1,0 +1,104 @@
+<!-- Created by Jake Henson, CSCI 3308 -->
+<!DOCTYPE html>
+<html lang="en">
+  <html>
+    <head>
+      <meta charset="utf-8">
+        <title>Webpage Analyzer- Results</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <link href="../resources/css/info.css" rel="stylesheet" type="text/css">
+
+
+		  <!--Google Fonts-->
+			<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+
+    </head>
+    <body  class="p-3 mb-2 bg-dark text-white">
+
+  	  <div class="container"  style="align-content: center; text-align: center; padding-top: 5px;">
+
+        <form>
+
+		<h5>Page(s) you've chosen:</h5>
+	  </div>
+
+    <div class="container" style="padding-top: 5px;">
+    <!-- Display which page(s) you'd like to analyze?
+    Note --- might be more difficult to generate N number of buttons with multiple pages...-->
+
+      <nav>
+        <ul>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons" style="align-self: center">
+          <label class="btn btn-secondary active">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked> NyTimes Page 1
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option2" autocomplete="off"> NyTimes Page 2
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3" autocomplete="off"> NyTimes Page 3
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option4" autocomplete="off"> NyTimes Page 4
+          </label>
+          <!--How do I generate more buttons/flexboxes based on number of pages??-->
+        </ul>
+      </nav>
+
+      <div id="currentURL" style="align-content: center; text-align: center;">
+        <h3>https://nytimes.com</h3>
+      </div>
+
+    </div>
+
+
+    <div class="container" style="padding-top: 20px;">
+          <nav>
+              <ul>
+                  <li>
+                    <button type="button" class="btn btn-outline-info btn-lg" style="padding-bottom: 10px; font-family: 'Oswald', sans-serif;">Metadata</button>
+                  </li>
+                  <li>
+                    <button type="button" class="btn btn-outline-info btn-lg" style="padding-bottom: 10px; font-family: 'Oswald', sans-serif;">Text Analysis</button>
+                  </li>
+              </ul>
+          </nav>
+    </div>
+
+
+    <div class="container">
+      <article>
+
+            <section class="fullwidth" style="align-content: center">
+                        This is where a basic description about the website will go....
+                        [Nytimes is a website websitewebsitewebsite website  website website website website website websitewebsitewebsitewebsite]
+            </section>
+      			<section class="halfwidth">
+              <h5>Number of tags (metadata)</h5>
+      				<ul>
+                <li>div: 4</li>
+                <li>html: 7</li>
+                <li>ul: 9</li>
+                <li>li: 12</li>
+                <li>ol: 3</li>
+                <li>p: 77</li>
+                <li>header: 2</li>
+                <li>footer: 1</li>
+                <li>h1: 9</li>
+                <li>h2: 14</li>
+              </ul>
+      			</section>
+
+      			<section class="halfwidth">
+              <h5>Pie Chart Breakdown</h5>
+        				  [pi-chart goes here]
+      			</section>
+      </article>
+    </div>
+  </html>

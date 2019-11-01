@@ -1,0 +1,77 @@
+#container{
+	width:100%;
+	max-width:960px;
+	margin:0px auto;
+	background-color:rgb(225,225,225);
+	padding:0px;
+	box-sizing:border-box;
+
+	display: /*weird*/ flex /*but okay*/;
+	flex-wrap:wrap;
+	flex-direction:row;
+	align-content:flex-start;
+	align-items:stretch;
+}
+
+h5{
+  	font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+}
+
+nav{
+	width:100%;
+  background-color:rgb(52,58,64); /*  -- actual background colour */
+	margin:10px 0px;
+	padding:0px;
+	box-sizing:border-box;
+	text-align:center;
+}
+nav ul{
+	list-style-type: none;
+	margin:0px;
+	padding:0px;
+}
+nav ul li{
+	display:inline-block;
+	margin:0px 50px;
+	background-color:rgb(29,32,36);
+	padding:10px;
+}
+
+btn-info{
+  color: rgb(29, 29, 38);
+}
+
+.btn .btn-secondary .active{
+  color: rgba(0, 0, 0, 0);
+}
+
+.fullwidth{
+	background-color:rgba(31,35,38, 0.7);
+	margin:2%;
+	width:96%;
+	padding:2%;
+	box-sizing:border-box;
+}
+
+.halfwidth{
+	background-color:rgba(31,35,38, 0.7);
+	margin:2%;
+	width:46%;
+	padding:2%;
+	box-sizing:border-box;
+}
+
+article{
+	width:100%;
+	background-color:rgba(17,18,20, 0.9);
+	margin:0px;
+	padding:0px;
+	box-sizing:border-box;
+
+	display:flex;
+	flex-wrap:wrap;
+	flex-direction:row;
+	align-content:center;
+	align-items:stretch;
+}
