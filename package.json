@@ -1,0 +1,24 @@
+{
+  "name": "converter",
+  "version": "1.0.0",
+  "description": "take in user date and parse through python script",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaayejaaaye/CSCI-3308-CodeNStuff.git"
+  },
+  "author": "AJ and Friends",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaayejaaaye/CSCI-3308-CodeNStuff/issues"
+  },
+  "homepage": "https://github.com/aaayejaaaye/CSCI-3308-CodeNStuff#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "joi": "^14.3.1"
+  }
+}
