@@ -19,51 +19,34 @@
 			<link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
 
     </head>
-    <body  class="p-3 mb-2 bg-dark text-white">
+    <body class="p-3 mb-2 bg-dark text-white">
 
   	  <div class="container"  style="align-content: center; text-align: center; padding-top: 5px;">
 
-        <form>
-
 	  </div>
 
-    <div id = "loading_box" style="margin: auto; margin-top: 250px">
+    <div id="loading_box" style="margin: auto; margin-top: 250px">
+
+      <!--Note - this loads on click rn, instead of actually using the API. This is something we'll need to update!!
+      All we need to do is change the "onclick=" to the API GET request for when the JSON file has been found and we're good-->
         <h4 id="loadingInfo"  onclick="load_boxes(3)">Loading Your Form...</h4>
-        <div class="lds-ring" id="spinner_ring"><div></div><div></div><div></div><div></div></div>
+        <div class="lds-ring" id="spinner_ring"><div></div><div></div><div></div><div></div></div> <!--DONT DELETE - These div tags don't need ID's because they're used to make the spinner ring-->
         <br>
         <br>
         <h5>Thanks for being patient...we're getting your results!</h5>
     </div>
 
 
-    <h5 id="header_info"><h5>
+    <h5 id="header_info"><h5> <!--Populated from the JS - don't delete!-->
 
-    <div class="container" style="padding-top: 5px;">
-<!--
-      <nav>
-        <ul>
-          <div class="btn-group btn-group-toggle" data-toggle="buttons" style="align-self: center; align-content: center">
-          <label class="btn btn-secondary active">
-            <input type="radio" name="options" id="option1" autocomplete="off" checked> NyTimes Page 1
-          </label>
-          <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option2" autocomplete="off"> NyTimes Page 2
-          </label>
-          <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option3" autocomplete="off"> NyTimes Page 3
-          </label>
-          <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option4" autocomplete="off"> NyTimes Page 4
-          </label>
-          <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option5" autocomplete="off"> All Pages
-          </label>
-        </ul>
-      </nav> -->
 
-    </div>
+    <div id="bigbox"> <!--Contains all objects so they'll fit within the certain margins/styles. Can be adjusted later in the CSS-->
 
-    <div id="bigbox">
+<!--All this code is commented out here so I can make any adjustments to the boxes' style or contents without messing with the strings in the JS
+Originally used for testing.
+This will be populated by the JS for this file
+-->
+
           <!-- <div class="container" style="padding-top: 20px;">
                 <nav>
                     <ul>
@@ -128,7 +111,7 @@
         console.log("Loading box" + i);
 
           box_str +=
-          '<div class="container" style="padding-top: 20px;">' +
+          '<div id="toggle_buttons_page_' + i + '" class="container" style="padding-top: 20px;">' +
                 '<nav>' +
                     '<ul>' +
                         '<li>' +
@@ -142,14 +125,15 @@
           '</div>' +
 
 
-          '<div class="container" style="margin-top: -15px">' +
-            '<article>' +
-                  '<h3>' + 'https://nytimes.com (brief page title goes here)' + '</h3>' +
+          '<div id="container_page_' + i + '" class="container" style="margin-top: -15px">' +
+            '<article  id="article_page_' + i + '" >' +
+                  '<h3>' + 'https://nytimes.com (brief page title goes here)' + '</h3>' + //NOTE - this doesn't need an ID, and can be populated directly with the text from the API (specifically, the basic URL/title)
 
                   '<section class="fullwidth" style="align-content: center">' +
-                            'This is where a basic description about the website will go....' +
+                            'This is where a basic description about the website will go....' + //NOTE - this doesn't need an ID, and can be populated directly with the description text from the API
                   '</section>' +
-                  '<section class="halfwidth">' +
+                  '<section id="metadata_section_page_' + i + '"  class="halfwidth">' +
+                  //NOTE - these li elements shouldn't need unique ID's, and can be populated using the JSON from the API
                     '<h5>Number of tags (metadata)</h5>' +
                     '<ul id="ul_tag_list">' +
                       '<li>div: 4</li>' +
@@ -165,9 +149,9 @@
                     '</ul>' +
                   '</section>' +
 
-                  '<section class="halfwidth">' +
+                  '<section id="piechart_section_page_' + i + '"  class="halfwidth">' +
                     '<h5>Pie Chart Breakdown</h5>' +
-                        '[pi-chart goes here]' +
+                        '[pi-chart goes here]' + //NOTE- this is where we'll need to put the PieChart from the JSON...note sure *how* or where we retreive it from (ask Andrew?)
                   '</section>' +
             '</article>' +
           '</div>' +
@@ -175,8 +159,8 @@
           ;
       }
 
-      $('#bigbox').html(box_str); //append to the string
-
+      $('#bigbox').html(box_str); //append to the string in the "bigbox", which is a big ol' div tag to store all this stuff
+      //note - there's probably a *way* better way of doing this, but I'm not super familiar with javascript
 
       //delete  the spinner
       var node = document.getElementById("loading_box");
