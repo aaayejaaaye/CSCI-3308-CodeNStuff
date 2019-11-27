@@ -9,7 +9,7 @@
 		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-      <link href="../resources/css/info.css" rel="stylesheet" type="text/css">
+      <link href="../resources/css/info.css" rel="stylesheet" type="text/css"> <!--Keep this below bootstrap so we can override bootstrap css stuff-->
 
 
 		  <!--Google Fonts-->
@@ -28,76 +28,83 @@
 
     <div id="loading_box" style="margin: auto; margin-top: 250px">
 
-      <!--Note - this loads on click rn, instead of actually using the API. This is something we'll need to update!!
-      All we need to do is change the "onclick=" to the API GET request for when the JSON file has been found and we're good-->
         <h4 id="loadingInfo"  onclick="load_boxes(3)">Loading Your Form...</h4>
-        <div class="lds-ring" id="spinner_ring"><div></div><div></div><div></div><div></div></div> <!--DONT DELETE - These div tags don't need ID's because they're used to make the spinner ring-->
+        <div class="lds-ring" id="spinner_ring"><div></div><div></div><div></div><div></div></div>
         <br>
         <br>
         <h5>Thanks for being patient...we're getting your results!</h5>
     </div>
 
 
-    <h5 id="header_info"><h5> <!--Populated from the JS - don't delete!-->
-
+    <h5 id="header_info"></h5> <!--Populated from the JS - don't delete!-->
+    <br>
+    <h5 id="subheader_info" style="font-size: 18px;"><i></i><h5>
 
     <div id="bigbox"> <!--Contains all objects so they'll fit within the certain margins/styles. Can be adjusted later in the CSS-->
 
-<!--All this code is commented out here so I can make any adjustments to the boxes' style or contents without messing with the strings in the JS
-Originally used for testing.
-This will be populated by the JS for this file
--->
-
-          <!-- <div class="container" style="padding-top: 20px;">
+          <!-- <div id="toggle_buttons_page_0" class="container" style="padding-top: 20px;">
                 <nav>
                     <ul>
                         <li>
-                          <button type="button" id="metadatabutton" class="btn btn-outline-info btn-lg"  data-toggle="button">Metadata</button>
+                          <button type="button" id="metadatabutton_page_0" class="btn btn-outline-info btn-lg" data-toggle="collapse" data-target="#metadata_collapse_page_0" >Metadata</button>
                         </li>
                         <li>
-                          <button type="button" id="textbutton" class="btn btn-outline-info btn-lg"  data-toggle="button">Text Analysis</button>
+                          <button type="button" id="textbuttonpage_0"  class="btn btn-outline-info btn-lg" data-toggle="collapse" data-target="#text_collapse_page_0">Text Analysis</button>
                         </li>
                     </ul>
                 </nav>
           </div>
 
-          <div class="container" style="margin-top: -15px">
 
-            <article>
-                  <h3>https://nytimes.com</h3>
+          <div id="container_page_0" class="container" style="margin-top: -15px">
+            <article  id="article_page_0" >
+                  <h3>https://nytimes.com (brief page title goes here)</h3>
 
                   <section class="fullwidth" style="align-content: center">
-                              This is where a basic description about the website will go....
-                              [Nytimes is a website websitewebsitewebsite website  website website website website website websitewebsitewebsitewebsite]
+                            This is where a basic description about the website will go....
                   </section>
-            			<section class="halfwidth">
-                    <h5>Number of tags (metadata)</h5>
-            				<ul>
-                      <li>div: 4</li>
-                      <li>html: 7</li>
-                      <li>ul: 9</li>
-                      <li>li: 12</li>
-                      <li>ol: 3</li>
-                      <li>p: 77</li>
-                      <li>header: 2</li>
-                      <li>footer: 1</li>
-                      <li>h1: 9</li>
-                      <li>h2: 14</li>
-                    </ul>
-            			</section>
 
-            			<section class="halfwidth">
-                    <h5>Pie Chart Breakdown</h5>
-              				  [pi-chart goes here]
-            			</section>
-            </article>
-          </div> -->
+                  <div class="collapse" id="metadata_collapse_page_0">
+                        <section id="metadata_section_page_0"  class="halfwidth">
+                          <h5><b>Number of tags (metadata)</b></h5>
+                          <ul id="ul_tag_list">
+                            <li>div: 4</li>
+                            <li>html: 7</li>
+                            <li>ul: 9</li>
+                            <li>li: 12</li>
+                            <li>ol: 3</li>
+                            <li>p: 77</li>
+                            <li>header: 2</li>
+                            <li>footer: 1</li>
+                            <li>h1: 9</li>
+                            <li>h2: 14</li>
+                          </ul>
+                        </section>
+                        <section id="piechart_section_page_0"  class="halfwidth">
+                          <h5><b>Pie Chart Breakdown</b></h5>
+                              [pi-chart goes here]
+                        </section>
+                  </div>
+
+                  <div class = "collapse" id="text_collapse_page_0">
+                      <section id="piechart_section_page_0"  class="fullwidth" style="align-items: left;">
+                        <h5><b>Text Analysis</b></h5>
+                          <ul id="ul_tag_list">
+                            <li>Nouns: 55</li>
+                            <li>Adjectives: 29</li>
+                            <li>more stuff goes here</li>
+                          </ul>
+                      <section>
+                  </div>
+                </article>
+        </div>
+    <br> -->
+
+
+  </div> <!--end of bigbox-->
+
+
     </div>
-
-<!--TODO: update this to be in it's own file. For now, i'm keeping it here cause it's easier to write the HTML in-line-->
-  <script>
-
-  </script>
 
   </body>
 </html>

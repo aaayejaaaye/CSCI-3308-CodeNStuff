@@ -161,3 +161,10 @@ button{
     transform: rotate(360deg);
   }
 }
+
+
+/* override the stupid bootstrap collapse that breaks the page >:(   */
+.collapse{
+	width: 100%;
+	display: flex;
+}
