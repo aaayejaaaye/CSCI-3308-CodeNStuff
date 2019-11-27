@@ -72,7 +72,10 @@ function load_boxes(num_sites)
       }
 
       $('#bigbox').html(box_str); //append to the string in the "bigbox", which is a big ol' div tag to store all this stuff
-      //note - there's probably a *way* better way of doing this, but I'm not super familiar with javascript and editing HTML with it
+
+
+      addExportButton();
+
   }
 
 //tells the user how many sites' they've queried
@@ -138,7 +141,11 @@ function displayTextAnalysisList(){
   return text_list_str; //should always be returned as big string
 }
 
-
+//places the export button on the page
+function addExportButton(){
+  var buttonstr = '<button id="export" class="btn btn-info btn-lg" data-toggle="modal" data-target="#exportModal">Export Data</button>';
+  $('#buttonplacement').html(buttonstr);
+}
 
 
 ///buttonState will allow the buttons to be toggled using the EventListener

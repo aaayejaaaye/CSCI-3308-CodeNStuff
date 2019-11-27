@@ -5,6 +5,16 @@ h3 {
   font-family: 'Oswald', sans-serif;
 }
 
+h4 {
+  padding-bottom: 0px;
+  margin-top: 5px;
+  margin-right: 12px;
+  font-size: 18px;
+  align-self: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+
 #plus, #minus {
   height: 50px;
   width: 50px;
@@ -12,6 +22,33 @@ h3 {
 
 #submit {
   margin: 2.5% 35%;
+}
+
+#login{
+  margin-right: 0.5%;
+}
+
+#signup{
+  margin-right: 0.5%;
+}
+
+#myaccount{
+  margin-right: 0.5%;
+}
+
+#username_display{
+  font-style: italic;
+}
+
+
+.login_block{
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-content: center;
+  text-align: right;
+  text-align: center;
+  margin-top: 8px;
 }
 
 .top {

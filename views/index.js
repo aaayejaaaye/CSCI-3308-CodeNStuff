@@ -67,8 +67,21 @@ function submitButton() {
   console.log(arg_str);
 
   if(all_valid == true){
-    //you should the API here after we've validated the URLs
+    //you should run the API here after we've validated the URLs
   }
+}
+
+//disables the myAccount button if the user hasn't loggin sin
+function checkIfSignedIn(){
+  var is_logged_on = false;   //TODO: find a way to determine whether the user has logged in or not
+
+  if(is_logged_on == false){
+    $("#myaccount").prop("disabled", true);
+  }
+  else{
+    $("#myaccount").prop("disabled", false);
+  }
+
 }
 
 //checks if all URL's are actually valid, returns true if they are, otherwise, returns false!
@@ -87,6 +100,8 @@ $(document).ready(function() {
   if (num_inputs == 1) {
     $("#minus").prop("disabled", true);
   }
+
+  checkIfSignedIn(); //run the my account button
 
   $("#submit").click(function(){ submitButton(); return false; });
 
