@@ -88,7 +88,7 @@ function populate_headers(num_sites){
     document.getElementById("header_info").innerHTML = "Here are your results from all of your " + num_sites + " queries:";
   }
 
-  document.getElementById("subheader_info").innerHTML = "<i>(To check out your data, click on the Metadata or Text Analysis buttons)</i>";
+  document.getElementById("subheader_info").innerHTML = "<i>(click on the Metadata or Text Analysis buttons to open each section)</i>";
 }
 
 
