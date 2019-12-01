@@ -51,19 +51,23 @@ function load_boxes(num_sites)
                             displayMetadataList() +
                           '</ul>' +
                         '</section>' +
-                        '<section id="piechart_section_page_' + i + '" class="halfwidth">' +
-                          '<h5><b>Pie Chart Breakdown</b></h5>' +
+                        '<section id="piechart_meta_page_' + i + '" class="halfwidth">' +
+                          '<h5><b>Pie Chart Breakdown of Metadata</b></h5>' +
                             displayMetadataPieChart() +
                         '</section>' +
                   '</div>' +
 
                   '<div class = "collapse" id="text_collapse_page_' + i + '">' +
-                      '<section id="piechart_section_page_' + i + '" class="fullwidth" style="align-items: left;">' +
+                      '<section id="piechart_section_page_' + i + '" class="halfwidth" style="align-items: left;">' +
                         '<h5><b>Text Analysis</b></h5>' +
                           '<ul id="ul_tag_list">' +
                             displayTextAnalysisList() +
                           '</ul>' +
-                      '<section>' +
+                      '</section>' +
+                      '<section id="piechart_text_page_' + i + '" class="halfwidth">' +
+                        '<h5><b>Pie Chart Breakdown of Text</b></h5>' +
+                          displayTextAnalysisPieChart() +
+                      '</section>' +
                   '</div>' +
                 '</article>' +
         '</div>' +
@@ -139,6 +143,16 @@ function displayTextAnalysisList(){
   '<li>whatever else: 420</li>'; //make sure to put data in between two <li></li> tags!
 
   return text_list_str; //should always be returned as big string
+}
+
+function displayTextAnalysisPieChart(){
+  var text_pie_string = '';
+
+  text_pie_string = "[pie chart goes here]"; //populate the pie chart here, ideally as a string so we can return it
+  //i'm not sure what type of object the pie chart is, (image, css class? html?)
+  //but we can account for this later
+
+  return text_pie_string; //should always be returned as a string
 }
 
 //places the export button on the page
