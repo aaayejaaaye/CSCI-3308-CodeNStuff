@@ -28,6 +28,8 @@ import codecs
 # so i can handle the command line arguments required for running the script once
 import sys
 
+import pprint
+
 # ------------------------------------------------------------------------------
 
 def get_url_data(url):
@@ -122,15 +124,23 @@ def get_tag_data(urls):
 	# tags we don't want to collect data for
 	BLACKLIST_TAGS = []
 	TEXT_TAGS = ['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'a', 'li', 'th', 'td', 'q', 'i', 'strong', 'button', 'time']
-	if type(urls) != 'list':
+
+	json_dict = dict()
+	i = 1
+
+	if isinstance(urls, list):
+		urls = urls
+	else:
 		urls = [urls]
 
 	for url in urls:
+		url_text = 'url_' + str(i)
+#		print(url_text)
+
 		success, page, message = get_url_data(url)
 		tag_dict = dict()
 		text_dict = dict()
 		pos_dict = dict()
-		json_dict = dict()
 		text_analysis_dict = dict()
 		meta_data_dict = dict()
 		data_dict = dict()
@@ -185,28 +195,31 @@ def get_tag_data(urls):
 			data_dict['tag_analysis'] = tag_list
 			data_dict['error'] = None
 
-			json_dict[url] = data_dict
+			json_dict[url_text] = data_dict
 		else:
 			data_dict['meta'] = None
 			data_dict['text_analysis'] = None
 			data_dict['tag_analysis'] = None
 			data_dict['error'] = message
-			json_dict[url] = data_dict
+			json_dict[url_text] = data_dict
+		i += 1
 
-	return json.dumps(json_dict)
+
+	return json.dumps(json_dict, indent=2, sort_keys=True)
 
 # ------------------------------------------------------------------------------
 
 def main():
-#	URLS = ['https://www.apple.com/', 'https://www.amazon.com', 'https://www.appple.com/', 'https://www.geeksforgeeks.org', 'https://www.google.com/', 'https://facebook.com', 'https://www.nytimes.com', 'https://www.twitter.com', 'https://www.walmart.com']
+	urls = []
+	n = len(sys.argv)
 
-#	URLS = ['https://www.nytimes.com/']
-#	print(sys.argv[1])
-	s1 = str(sys.argv[1])
-#	print(s1)
-#	print(s1 == sys.argv[1])
-	print(get_tag_data(s1))
-#	print(get_tag_data(URLS))
+	for i in range(1, n):
+		urls.append(sys.argv[i])
+#	print(urls)
+
+#	get_tag_data(urls)
+	print(get_tag_data(urls))
+	
 
 # ------------------------------------------------------------------------------
 
