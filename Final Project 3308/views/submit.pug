@@ -1,0 +1,78 @@
+html
+  head
+    title= my_title
+
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css", integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS", crossorigin="anonymous")
+
+    link(href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet")
+    link(rel="stylesheet", href="resources/css/submit.css")
+
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js")
+    //-script(src="resources/js/info_2.js")
+  
+  body.p-3.mb-2.bg-dark.text-white
+    div.container-fluid.text-center.mt-2
+      if urls[0] != "None"
+        a.btn.btn-lg.btn-info.ml-1.mr-1#url_0= urls[0]
+      if urls[1] != "None"
+        a.btn.btn-lg.btn-info.ml-1.mr-1#url_1= urls[1]
+      if urls[2] != "None"
+        a.btn.btn-lg.btn-info.ml-1.mr-1#url_2= urls[2]
+      br
+      a.btn.btn-lg.btn-outline-secondary.ml-1.mr-1.mt-3(data-toggle="collapse", href="#dataCollapse1", role="button", aria-expanded="true", aria-controls="dataCollapse1", onclick="createTagChart()") Metadata Analysis
+      a.btn.btn-lg.btn-outline-secondary.ml-1.mr-1.mt-3(data-toggle="collapse", href="#dataCollapse2", role="button", aria-expanded="true", aria-controls="dataCollapse2", onclick="createPosChart()") Text Analysis
+      div.container.h-75.mt-5.text-dark
+        div.card.main-card
+          div.row.mx-auto.my-3.w-100
+            div.col-12
+              div.card.border-light
+                div.card-body
+                  h5.card-title Site Description
+                  p.mt-3.mb-0.lead= data.url_1.meta.description
+          div.container.collapse.multi-collapse#dataCollapse1
+            div.row.my-3.w-100
+              div.col-6
+                div.card
+                  div.card-body
+                    h5.card-title Tag Breakdown
+                    if data
+                      ul.list-group
+                      for val in data.url_1.tag_analysis
+                        li.list-group-item= val[0] + ' - ' + val[1]
+              div.col-6
+                div.card
+                  div.card-body
+                    h5.card-title HTML Tag Pie Chart
+                    if data
+                      div.p-0.m-0.chart
+                        canvas.p-0.m-0#tagChart
+          div.container.collapse.multi-collapse#dataCollapse2
+            div.row.my-3.w-100
+              div.col-6
+                div.card
+                  div.card-body
+                    h5.card-title Text Analysis
+                    if data
+                      ul.list-group
+                      for val in data.url_1.text_analysis.pos
+                        li.list-group-item= val[0] + ' - ' + val[1]
+              div.col-6
+                div.card
+                  div.card-body
+                    h5.card-title Parts of Speech Pie Chart
+                    if data
+                      div.chart
+                        canvas#posChart
+                      
+    script(type='text/javascript').
+      var myVar = !{jsStringify(data)};
+    script(src="../resources/js/info_2.js")
+           

@@ -1,0 +1,100 @@
+h3 {
+  padding: 1%;
+  font-size: 2.75rem;
+  margin: 5% 0 2.5%;
+  font-family: 'Oswald', sans-serif;
+}
+
+h4 {
+  padding-bottom: 0px;
+  margin-top: 5px;
+  margin-right: 12px;
+  font-size: 18px;
+  align-self: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+#plus, #minus {
+  height: 50px;
+  width: 50px;
+}
+
+#submit {
+  margin: 2.5% 35%;
+}
+
+#login {
+  margin-right: 0.5%;
+}
+
+#signup {
+  margin-right: 0.5%;
+}
+
+#myaccount {
+  margin-right: 0.5%;
+}
+
+#username_display {
+  font-style: italic;
+}
+
+.login_block {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-content: center;
+  text-align: right;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.top {
+  height: 45vh;
+}
+
+.bottom {
+  width: 100%;
+  padding: 0 2.5%;
+  font-size: 1.2rem;
+}
+
+.description {
+  margin-bottom: 2.5%;
+  font-family: 'Roboto', sans-serif;
+}
+
+input {
+  text-align: center;
+  font-family: 'Fira Code', monospace;
+}
+
+button {
+  font-family: 'Oswald', sans-serif
+}
+
+footer {
+  /* positioning the footer */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* font-stuff */
+  font-family: 'Roboto', sans-serif;
+  /* make the text a lil smaller */
+  font-size: 0.75rem;
+  /* give the text some padding on top and bottom */
+  padding: 1% 0;
+  /* make the text a lil transparent so the color is a grayed out */
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 800px) {
+  h3 {
+    font-size: 2rem;
+  }
+
+  .other {
+    font-size: 1rem;
+  }
+}

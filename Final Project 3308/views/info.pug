@@ -1,0 +1,27 @@
+html
+  head
+    title= my_title
+
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css", integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS", crossorigin="anonymous")
+
+    link(href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet")
+    link(rel="stylesheet", href="resources/css/info.css")
+
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js")
+    script(src="info.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js")
+  
+  body.p-3.mb-2.bg-dark.text-white
+    div.mt-5#loading_box
+      h4#loadingInfo(onclick="load_boxes(3)") Loading your form...
+      <div class="lds-ring" id="spinner_ring"><div></div><div></div><div></div><div></div></div>
+      br
+      br
+      h5 Thanks for being patient...we're getting your results!
