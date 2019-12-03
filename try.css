@@ -1,0 +1,65 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+ width: 500px;
+ padding: 7%; /*the box height */
+ margin: auto; /*put the kuang in the middle*/
+}
+.form {
+ position: relative;
+ /*z-index: 1;*/  /*sepaerate the user box and password box*/
+ background: #48d1cc; /*box color*/
+ max-width: 500px;
+ margin: 0 auto 80px;
+ padding: 50px;
+ text-align: center;
+box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.3), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+ font-family: "Roboto" sans-serif; /*font type*/
+ /*outline: 0;*/
+ background: #ffffe0;
+ width: 100%;/*length of user name box*/
+ border: 50px; /*user name box outframe*/
+ margin: 0 0 15px ;/*sepaerate the user box and password box*/
+ padding: 20px;/*user name box size*/
+ box-sizing: border-box; /*put thebox outframe in the middle*/
+ font-size: 20px;/*user name size*/
+}
+.form button {
+ font-family: "Roboto", sans-serif;
+ text-transform: uppercase;
+ outline: 10;
+ background: #fffacd; /*login icon color*/
+ width: 30%;/*login box width*/
+ border: 0;/*log in*/
+ padding: 20px; /*login padding size*/
+ color: #000000; /*login color*/
+ font-size: 15px;
+ -webkit-transition: all 0.3 ease;
+ transition: all 0.3 ease;
+ cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+ background: #f5deb3;
+}
+.form .message {
+ margin: 30px 0 0;
+ color: #20b2aa;
+ font-size: 20px;
+}
+.form .message a {
+ color: #808080;
+ text-decoration: none;
+}
+.form .register-form {
+ display: none;
+}
+
+
+body {
+
+background : #00ced1
+
+
+}
