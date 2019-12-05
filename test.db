@@ -1,0 +1,13 @@
+DROP TABLE login_in;
+CREATE TABLE IF NOT EXISTS login_in(
+  user_name VARCHAR(30),
+  password VARCHAR(15),
+  feedback LONGTEXT,
+  PRIMARY KEY(user_name)
+);
+
+INSERT INTO login_in (user_name, password, feedback)
+VALUES('test1' , 'qwerty' , 'Great'),
+('test2' , 'asdfg' , 'kk'),
+('test3' , 'zxcvb' , 'bad')
+;
