@@ -1,0 +1,35 @@
+heroku pg:psql -a website-analysis-csci3308
+
+
+
+DROP TABLE user_info;
+CREATE TABLE IF NOT EXISTS user_info(
+  user_name VARCHAR(30),  /* Name of the user */
+  feedback_ratings SMALLINT NOT NULL, /* one of rating feedbacks from the user 0 means worst, 100 means best*/
+  user_occupation VARCHAR(30), /* user's occupation: student, data scientist..etc */
+  birth_date DATE NOT NULL,   /* user's birthday, can be used with name as a primary key */
+  users INT[] NOT NULL,       /* This is an array which has the user ids. can be used as a foreign key to users */
+  PRIMARY KEY (user_name, birth_date) /* unique primary key for each user*/
+);
+
+/* this one is more personal, for user's record. */
+
+DROP TABLE user_profile;
+CREATE TABLE IF NOT EXISTS user_profile(
+  id SERIAL PRIMARY KEY, /* Unique id for each user */
+  password VARCHAR(50) NOT NULL, /* user's password */
+  searching_history VARCHAR(200), /* website link of users frequently used */
+  personal_description VARCHAR(200), /* user's personal description */
+  img_src VARCHAR(200) /* user's profile image */
+);
+
+INSERT INTO user_info(user_name, feedback_ratings, user_occupation, birth_date, users)
+VALUES('rush b', 60 , 'student' , '19980101',ARRAY [1]),
+('test 1' , 100, 'data scientist' , '19890101' , ARRAY [2]),
+('test 2' , 80 , 'instructor' , '19790101', ARRAY[3])
+;
+
+INSERT INTO user_profile(password, searching_history, personal_description, img_src)
+VALUES('1234qwer' , 'https://www.youtube.com/' , 'hardcore & cold' , '../resources/img/bear.jpg'),
+('1234asdf' , 'https://www.nytimes.com/' , 'I am a cat, I love food, I use pug. I can be the best data scientist' , '../resources/img/cat.jpg'),
+('1234zxcv', 'https://getsupport.apple.com/' , 'I am another cat, I need hug ,and my ipone should be repaired', '../resources/img/cat2.jpg');

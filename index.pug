@@ -1,0 +1,40 @@
+html
+  head
+    title= my_title
+
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css", integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS", crossorigin="anonymous")
+
+    link(href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet")
+    link(rel="stylesheet", href="resources/css/index.css")
+
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js")
+    script(src="resources/js/index.js")
+
+  body.bg-dark.text-white
+    div.login_block
+      h4.username_display You're not signed in yet!
+      button.btn.btn-light#login(type="button", href="try.html") LOGIN
+      button.btn.btn-light#signup(type="button", href="create.html") SIGN UP
+      button.btn.btn-light#myaccount(type="button", href="home.html") MY ACCOUNT
+
+    form.container(method="POST", action="/submit")
+      div.top.text-center
+        h3 Enter one or more webpages you want to analyze!
+        div.input-container.text-center#input_container_0
+          input.form-control.mb-2#url_0(type="text", name="url_0", placeholder="e.g. https://www.nytimes.com/")
+        button.btn.btn-info.btn-lg.mr-1#plus(type="button", onclick="plusButton()") +
+        button.btn.btn-info.btn-lg.ml-1#minus(type="button", onclick="minusButton()") -
+      div.bottom.card.w-75.mx-auto.mt-3.text-center.text-dark
+        button.btn.btn-info.btn-lg.w-50.mx-auto#submit(type="submit", href="") SUBMIT
+        p.description This application will take in your chosen website and analyze the content of the page(s). This includes, but is not limited to, metadata about your chosen site, (how the content is shown, percentages) as well as specific analysis of the text!
+
+    footer.text-center
+      span Developed by: AJ Jones, Andrew Pickner, Fengyuan Zhang, Jake Henson, and Yuxi Liu for CSCI 3308, &#9400; 2019.
+        i All rights reserved.
