@@ -11,5 +11,5 @@ We each built out our own branches and eventually merged them into one project a
 
 If you would like to run the code you can go to the link above.
 
-#### To view any/all of our contributions to this work, please check out all of our individual branches. 
+### *To view any/all of our contributions to this work, please check out all of our individual branches.*
 
